@@ -1,0 +1,772 @@
+*, ::after, ::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    scroll-padding: 120px;
+	scroll-behavior: smooth;
+}
+body{
+    font-family: "Inter Tight";
+    color: #000;
+}
+.container {
+    padding: 0 100px;
+    width: 100%;
+}
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    padding: 40px 0;
+    z-index: 2;
+    transition: all 0.3s;
+    height: 121px;
+}
+.expanded {
+    height: 350px;
+}
+.active .logo {
+    filter: invert(1);
+}
+.active nav {
+    filter: invert(1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+}
+.navbar{
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.navbar img {
+    width: 16px;
+    margin: 0 5px;
+    transition: all 0.3s;
+}
+.nav-text {
+    display: none;
+    margin-top: 35px;
+}
+.nav-text a {
+    text-decoration: none;
+    color: #fff;
+    padding: 20px 0;
+}
+.drop-down img {
+    transform: rotate(-180deg);
+}
+.drop-down .navbar {
+    display: flex;
+    flex-direction: column;
+}
+
+.drop-down .nav-text {
+   display: flex;
+   flex-direction: column;
+   position: absolute;
+}
+
+.search-box{
+    position: relative;
+}
+.search-box input:focus{
+    font-family: "Poppins";
+    width:200px;
+    height:40px;
+    border-radius:40px;
+    padding: 0 20px;
+    line-height: 2em;
+    font-weight: 300;
+    font-size: 20px;
+    text-decoration: none;
+    cursor:auto;
+}
+.search-box input{
+    float:right;
+    border:3px solid #fff;
+    outline:none;
+    width:30px;
+    height:30px;
+    cursor:pointer;
+    -webkit-transition:.2s all ease-in;
+    -moz-transition:.2s all ease-in;
+    transition:.2s all ease-in;
+    color:#fff;
+    border-radius:40px;
+    background:none;
+    font-size:0;
+}
+.search-box .close span{
+    width:3px;
+    height:20px;
+    border-radius:2px;
+    background:#fff;
+    display:inline-block;
+}
+.search-box .front{
+    position:absolute;
+    right:-20px;
+    top:10px;
+    transform: rotate(-45deg);
+    opacity:0;
+    animation-delay: 2s;
+    -webkit-transition:.2s all ease-in;
+    -moz-transition:.2s all ease-in;
+    transition:.2s all ease-in;
+    cursor: pointer;
+}
+.search-box .back{
+    position:absolute;
+    right:-3px;
+    top:20px;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    transition:.3s all ease-in;
+    cursor: pointer;
+} 
+
+.search-box input:focus + div .front{
+    opacity:1;
+    -webkit-transition-delay: .2s; 
+    -moz-transition-delay: .2s; 
+    transition-delay: .2s;
+    -webkit-transform: rotate(45deg);        
+    -moz-transform: rotate(45deg);        
+    transform: rotate(45deg);        
+}     
+.search-box input:focus + div .back{
+    right:-20px;
+    top:10px;
+}
+
+
+
+.menu-toggle {
+    display: none;
+}
+.swiper {
+    height: 100%;
+}
+.swiper-wrapper {
+    width: 100vh;
+    height: 100vh;
+}
+.naslovna {
+    background: url('/misling/assets/images/naslovna.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+.swiper-pagination {
+    margin-bottom: 45px;
+}  
+.swiper-pagination span {
+    height: 14px;
+    width: 14px;
+    margin: 0 20px !important;
+}
+.swiper-pagination-bullet-active {
+    background: #fff !important;
+}
+.swiper-pagination-bullet {
+    border: 2px  white solid !important;
+    opacity: 1 !important;
+}
+.naslovna-text {
+    width: 90%;
+    position: absolute;
+    bottom: 150px;
+    color: #fff;
+}
+.naslovna-text h1{
+    font-size: 70px;
+    font-weight: 500;
+    margin-bottom: 50px;
+    line-height: 1;
+    text-transform: uppercase;
+}
+.naslovna-text p {
+    font-family: "Poppins";
+    font-size: 26px;
+    max-width: 550px;
+}
+.naslovna-text a {
+    font-family: "Poppins";
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+    border-radius: 100px;
+    border: 2px solid #fff;
+    padding: 20px 50px;
+}
+.naslovna-flex {
+    display: flex;
+    justify-content: space-between;
+    
+}
+.headline {
+    padding: 80px 0;
+}
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 1px solid #72BE44;
+}
+.title h2{
+    color: #72BE44;
+    font-size: 30px;
+    font-weight: 500;
+}
+.green {
+    display: flex;
+}
+.green1 {
+    width: 25px;
+    height: 15px;
+    background: #B2D235;
+}
+.green2 {
+    width: 25px;
+    height: 15px;
+    background: #72BE44;}
+.green3 {
+    width: 25px;
+    height: 15px;
+    background: #03943F;
+}
+.headline-title {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.headline-title h3 {
+    font-size: 56px;
+    font-weight: 600;
+    text-transform: uppercase;
+    max-width: 1065px;
+}
+.headline-title a {
+    display: block;
+    font-family: "Poppins";
+    text-decoration: none;
+    color: #000;
+    font-size: 24px;
+    border-radius: 100px;
+    border: 2px solid #000;
+    padding: 20px 50px;
+    margin-top: 30px;
+}
+.headline-text {
+    max-width: 1500px;
+    margin: 75px 100px;
+}
+.uredski-sastanak { 
+    width: 100%;
+    display: block;
+}
+.paragraph p {
+    color: #919191;
+    font-family: Poppins;
+    font-size: 18px;
+    font-weight: 400;
+    width: 50%;
+    padding: 15px;
+}
+.paragraph {
+    display: flex;
+}
+.statements {
+    display: flex;
+}
+.manufacturing-capabilities .statements {
+    max-width: 1500px;
+    margin: 75px auto;
+}
+.mission .statements {
+    max-width: 1500px;
+    margin: 75px auto;
+}
+.statement {
+    width: 50%;
+    height: auto;
+    margin: 15px;
+}
+
+.statement-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 10px;
+    background: #EAEAEA;
+    padding: 40px;
+    height: 100%;
+}
+.statement-text h3 {
+    padding: 40px 0 20px;
+    font-size: 26px;
+    font-weight: 700;
+}
+.statement-text p {
+    font-size: 22px;
+    color: #000;
+    width: auto;
+}
+.statement-text a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 700;
+}
+.statement-text ul {
+    padding-left: 40px;
+    font-family: Poppins;
+    font-size: 20px;
+    max-width: 700px;
+    line-height: 1.4;
+}
+.statement-icon {
+    text-align: right;
+}
+.image img {
+    width: 100%;
+    display: block;
+}
+.animacija {
+    margin: 80px 0 50px 0;
+}
+.animacija1 {
+    background: url("/misling/assets/images/sponsor.png");
+    background-repeat: repeat-x;
+    background-size: cover;
+    height: 200px;
+    width: 100%;
+    animation: left-to-right 100s linear infinite;
+}
+.animacija2 {
+    background: url("/misling/assets/images/sponsor.png");
+    background-repeat: repeat-x;
+    background-size: cover;
+    height: 200px;
+    width: 100%;
+    animation: right-to-left 100s linear infinite;
+}
+@keyframes left-to-right {
+    from {
+        background-position: 0 center
+    }
+    to {
+        background-position: 10000px center
+    }
+}
+@keyframes right-to-left {
+    from {
+        background-position: 0 center
+    }
+    to {
+        background-position: -10000px center
+    }
+}
+.podatci {
+    padding: 120px 0;
+}
+.podatci .container {
+    display: flex;
+    justify-content: space-between;
+}
+.sections {
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 30%;
+    border-top: 1px solid #868686;
+    border-bottom: 1px solid #868686;
+}
+.sections span {
+    color: #72BE44;
+    font-size: 150px;
+    font-weight: 600;
+}
+.sections p {
+    font-size: 25px;
+    font-weight: 500;
+    width: 150px;
+}
+.products .container {
+    max-width: 1500px;
+    margin: 75px auto;
+}
+.award {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 -20px;
+}
+.award1 {
+    width: 50%;
+    padding: 15px;
+    height: 350px;
+    border-radius: 10px;
+}
+.proizvodnja-slika{
+    background: url("/misling/assets/images/proizvodnja.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+.why-us .proizvodnja-slika{
+    background: url("/misling/assets/images/kemija.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+.statement-text h4 {
+    font-size: 32px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+footer {
+    background: url(/misling/assets/images/footer-background.svg), #EAEAEA;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 50px 0;
+    height: 550px;
+}
+
+.contact-us {
+    display: flex;
+    justify-content: space-between;
+    height: 450px;
+}
+.osobni-podatci {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.osobni-podatci a{
+    text-decoration: none;
+    color: #000;
+    font-size: 24px;
+    font-weight: 700;
+}
+.osobni-podatci h4 {
+    font-size: 30px;
+    text-transform: uppercase;
+}
+.osobni-podatci p {
+    font-size: 24px;
+    font-weight: 700;
+}
+.osobni-podatci2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    text-align: right;
+}
+.osobni-podatci2 a{
+    text-decoration: none;
+    color: #000;
+    font-size: 24px;
+    font-weight: 700;
+    border-radius: 100px;
+    border: 2px solid #000;
+    padding: 20px 50px;
+}
+.osobni-podatci2 h4 {
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+.osobni-podatci2 img {
+    height: 120px;
+}
+.kolacici {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 
+BRANDS 
+*/
+.brands {
+    margin-top: 100px; 
+}
+.brands-flex {
+    display: flex;
+}
+.brands-image{
+    width: 50%;
+}
+.brands-image img {
+    width: 100%;
+    display: block;
+}
+.brands-card {
+    width: 50%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items:center;
+}
+.brands-card img {
+    padding: 0 70px;
+    max-height: 150px;
+    width: auto;
+    margin-bottom: 30px;
+}
+.brands-card p {
+    color: #797979;
+    font-family: Poppins;
+    font-size: 26px;
+    max-width: 600px;
+}
+.brands-card a {
+    display: block;
+    font-family: "Poppins";
+    text-decoration: none;
+    color: #000;
+    font-size: 26px;
+    border-radius: 100px;
+    border: 2px solid #000;
+    padding: 20px 50px;
+    margin-top: 30px;
+}
+
+
+/* 
+CONTRACT MANUFACTURING 
+*/
+
+.accordion {
+    max-width: 1500px;
+    margin: 75px auto;
+}
+.accordion-item {
+    padding-bottom: 30px;
+    border-bottom: 0.5px solid #8F8F8F;
+}
+.accordion-title {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    margin-top: 50px;
+}
+
+.accordion-title h3 {
+    text-transform: uppercase;
+    font-size: 34px;
+}
+.accordion-title img {
+    width: 24px;
+    transition: all 0.3s;
+}
+.accordion-item.accordion-active .accordion-title img {
+    transform: rotate(-180deg);
+}
+.accordion-text {
+    display: none;
+}
+.accordion-active  .accordion-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 50px 20px;
+}
+.accordion-text li {
+    color: #797979;
+    font-family: "Poppins";
+    font-size: 22px;
+    max-width: 700px;
+}
+.accordion-text strong, ::marker {
+    color: #000;
+}
+
+/*
+
+ABOUT US 
+
+*/
+.social-responsibility .swiper h3 {
+    font-size: 50px;
+    font-weight: 600;
+    text-align: center;
+}
+.social-responsibility .swiper-wrapper {
+    margin: 50px 0 100px;
+}
+.social-responsibility .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    background-color: #EAEAEA;
+    color: #72BE44;
+    border-radius: 10px;
+    padding: 60px 40px;
+    text-align: center;
+    cursor: pointer;
+}
+.social-responsibility .swiper-slide:hover img {
+    filter: brightness(0) invert(1);
+}
+.social-responsibility .swiper-slide:hover p {
+    filter: brightness(0) invert(1);
+}
+.social-responsibility .swiper-slide:hover {
+    background-color: #72BE44;
+}
+.social-responsibility .swiper-slide p {
+    margin-top: 40px;
+    font-size: 26px;
+    font-weight: 600;
+}
+.social-responsibility .swiper-slide img {
+    width: 130px;
+}
+
+
+/* 
+
+CONTACT US 
+
+*/
+
+form {
+    border-radius: 10px;
+    background: #EAEAEA;
+}
+.form-flex {
+    display: flex;
+    width: 100%;
+    padding: 60px 100px;
+    font-family: "Poppins";
+}
+.form-text {
+    padding: 15px;
+    width: 50%;
+}
+.form-letter {
+    padding: 15px;
+    width: 50%;
+}
+.form-letter input{
+    height: 280px;
+}
+.form-letter button{
+    background-color: #fff;
+    width: 100px;
+    height: 60px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.form-letter .submit {
+    display: flex;
+    align-items: center;
+}
+.form-letter p {
+    padding-left: 100px;
+    color: #747474;
+    font-size: 16px;
+}
+form input {
+    margin-bottom: 20px;
+    border:3px solid #fff;
+    outline:none;
+    background: #fff;
+    color: #000;
+    border-radius: 10px;
+    float: none;
+    width: 100%;
+    height: 60px;
+    font-size: 20px;
+    font-family: "Poppins";
+    text-decoration: none;
+}
+form input:focus{
+    border-radius: 10px;
+}
+form textarea {
+    margin-bottom: 20px;
+    border: 3px solid #fff;
+    outline: none;
+    background: #fff;
+    color: #000;
+    border-radius: 10px;
+    width: 100%;
+    height: 280px;
+    font-size: 20px;
+    font-family: "Poppins";
+    text-decoration: none;
+    resize: none;
+}
+
+form label {
+    font-size: 20px;
+    font-weight: 400;
+}
+.submit-area {
+    display: flex;
+    justify-content: space-between;
+}
+.submit-area .upload {
+    display: none;
+}
+label[for="upload"] {
+    display: flex;
+    align-items: center;
+    font-family: "Poppins";
+    text-decoration: none;
+    color: #000;
+    background-color: #fff;
+    font-size: 20px;
+    border-radius: 100px;
+    border: 2px solid #000;
+    height: 60px; 
+    width: 150px; 
+    cursor: pointer;  
+}
+label[for="upload"] img {
+    margin: 0 100px 0 60px
+}
+.submit-area input{
+    display: block;
+    font-family: "Poppins";
+    text-decoration: none;
+    color: #000;
+    background-color: #fff;
+    font-size: 20px;
+    border-radius: 100px;
+    border: 2px solid #000;
+    height: 60px; 
+    width: 150px; 
+    cursor: pointer;  
+}
+.submit-area input:focus {
+    border-radius: 100px;
+}
