@@ -18,7 +18,7 @@
     <header>
         <div class="container">
             <div class="logo">
-                <a href="#">           
+                <a href="index.html">           
                     <img src="/misling/assets/images/logo.svg" alt="logo">
                 </a>
             </div>
@@ -27,8 +27,9 @@
                     About us
                     <img src="/misling/assets/images/angle-down-white.svg" alt="angle-down-white" class="angle-down-white">    
                     <div class="nav-text">
-                        <a href="/misling/about-us.html#social-responsibility">SOCIAL RESPONSIBILITY</a>
-                        <a href="/misling/about-us.html#mission">MISSION</a>
+                        <a href="/misling/about-us.html#company-profile">COMPANY PROFILE</a>
+                        <a href="/misling/about-us.html#our-values">OUR VALUES</a>
+                        <a href="/misling/about-us.html#awards-and-acknowledgments">AWARDS AND CERTIFICATIONS</a>
                     </div>
                 </div>
                 <div class="navbar">
@@ -48,11 +49,7 @@
                     </div>
                 </div>
                 <div class="navbar">
-                    Products
-                    <img src="/misling/assets/images/angle-down-white.svg" alt="angle-down-white" class="angle-down-white">    
-                    <div class="nav-text">
-                        <a href="/misling/contact-us.html">CONTACT US</a>
-                    </div>
+                    <a href="/misling/contact-us.html">Contact</a>
                 </div>
                 <div class="navbar">
                     Language
@@ -64,7 +61,7 @@
                 </div>
                 <div>
                     <div class="search-box">
-                        <input type="text"/>    
+                        <input type="text" placeholder="Search...">    
                         <div class="close">
                            <span class="front"></span>
                            <span class="back"></span>
@@ -79,10 +76,13 @@
             </div>
         </div>
     </header>
-    <section class="image">
-        <img src="/misling/assets/images/ured.png" alt="ured">
+    <section class="image" style="height: 900px;">
+        <h1></h1>
+        <div class="parallax-wrapper">
+            <img src="/misling/assets/images/ured.png" alt="ured" class="parallax">
+        </div>
     </section>
-    <section class="contact">
+    <section id="contact-us">
         <div class="container">
             <div class="headline">
                 <div class="title">
@@ -122,11 +122,11 @@
                             </p>
                             <p>
                                 Tel:
-                                <a href="tel:+385 1 637 94 44">+385 1 637 94 44</a>
+                                <a href="tel:+38516379444">+385 1 637 94 44</a>
                             </p>
                             <p>
                                 Fax:
-                                <a href="tel:+385 1 621 63 33">+385 1 621 63 33</a>
+                                <a href="tel:+38516216333">+385 1 621 63 33</a>
                             </p>
                         </div>
                     </div>
@@ -207,25 +207,31 @@
                     <div class="form-letter">
                         <label for="letter">Motivational letter</label>
                         <textarea id="letter"></textarea>
-                        <label for="submit" class="submit">Add CV <p>(max. size 10 MB, only pdf, doc, docx)</p></label>
+                        <div class="submit">
+                            <h5>Add CV</h5>
+                            <p>(max. size 10 MB, only pdf, doc, docx)</p>
+                        </div>  
                         <div class="submit-area">
                             <input type="file" id="upload" class="upload">
                             <label for="upload">
                                 <img src="/misling/assets/images/attachment.svg" alt="attachment">
-                                <span>Choose a file...</span>
                             </label>
-                            <div>
-                                <input type="submit" value="Apply">
-                            </div>
+                            <span id="file-name">Choose a file...</span>
+                            <input type="submit" value="Apply">
                         </div>
                     </div>
                 </div>
             </form>
+        </div>
+    </section>
+    <section class="image" >
+        <div class="container">
+            <h1></h1>
             <div class="headline-text">
                 <img src="/misling/assets/images/uredski-sastanak.png" alt="uredski-sastanak" class="uredski-sastanak">
             </div>
         </div>
-    </section>
+    </section>    
     <footer>
         <div class="container">
             <div class="contact-us">
@@ -244,11 +250,11 @@
                         <br>
                         <p>
                             Tel:
-                            <a href="tel:+385 1 637 94 44">+385 1 637 94 44</a>
+                            <a href="tel:+38516379444">+385 1 637 94 44</a>
                         </p>
                         <p>
                             Fax:
-                            <a href="tel:+385 1 621 63 33">+385 1 621 63 33</a>
+                            <a href="tel:+38516216333">+385 1 621 63 33</a>
                         </p>
                         <p>
                             <a href="mailto:milsing@milsing.com">milsing@milsing.com</a>
@@ -287,28 +293,58 @@
             $('body').removeClass('menu-active');
         });
     });
-    $( document ).ready(function() {
-        $(window).on("scroll", function() {
-        if($(window).scrollTop() > 1200) {
-            $("header").addClass("active");
+    $(document).ready(function() {
+    $(window).on("scroll", function() {
+        if ($(window).width() <= 767) {
+            if ($(window).scrollTop() > 170) {
+                $("header").addClass("active");
+            } else {
+                $("header").removeClass("active");
+            }
         } else {
-            $("header").removeClass("active");
+            if ($(window).scrollTop() > 1150) {
+                $("header").addClass("active");
+            } else {
+                $("header").removeClass("active");
+            }
         }
-        });
     });
 
     $(document).ready(function() {
-        $('.navbar').on('click', function() {
-            $('.navbar').not(this).removeClass('drop-down');
-                $(this).toggleClass('drop-down');
-            $('header').toggleClass('expanded', $('.navbar').hasClass('drop-down'));
+    $('.navbar').on('click', function() {
+        $('.navbar').not(this).removeClass('drop-down');
+        $(this).toggleClass('drop-down');
+        if ($(window).width() > 991) {
+            $('header').toggleClass('expanded', $(this).hasClass('drop-down'));
+        }
+    });
+
+    $('.menu-toggle').on('click', function() {
+        $(this).toggleClass('drop-down');
+            if ($(window).width() <= 991) {
+                $('header').toggleClass('expanded', $(this).hasClass('drop-down'));
+            }
         });
     });
     document.getElementById('upload').addEventListener('change', function() {
         var fileName = this.files[0].name; 
-        this.nextElementSibling.querySelector('span').textContent = fileName;
+        this.nextElementSibling.nextElementSibling.textContent = fileName;
     });
-
+    $(document).ready(function() {
+        $(window).on("scroll", function() {
+            var scrollPosition = $(this).scrollTop();
+            $(".parallax").each(function() {
+                var offsetTop = $(this).offset().top;
+                var windowHeight = $(window).height();
+                if (scrollPosition + windowHeight < offsetTop || scrollPosition > offsetTop + $(this).height()) {
+                    $(this).css("transform", "translateY(0)");
+                } else {
+                    $(this).css("transform", "translateY(" + ((scrollPosition - offsetTop) / 20) + "px)");
+                }
+            });
+        });
+    });
+});
 </script>
 </body>
 </html>
