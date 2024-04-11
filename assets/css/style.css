@@ -445,10 +445,24 @@ nav {
 
 .image {
     position: relative;
-    height: 1200px; 
     overflow: hidden;
+	height: 1300px;
 }
-
+.image1 {
+	position: relative;
+    overflow: hidden;
+	height: 600px;
+}
+.image2 {
+	position: relative;
+    overflow: hidden;
+	height: 900px;
+}
+.image3 {
+	position: relative;
+    overflow: hidden;
+	height: auto;
+}
 .parallax-wrapper {
     position: absolute;
     top: 0;
@@ -1162,7 +1176,7 @@ label[for="upload"] {
 		border-bottom: 1px solid #868686;	
 	}
 	.sections span {
-		font-size: 100px;
+		font-size: 90px;
 	    padding-right: 15px;
 	}
 	.products .container {
@@ -1222,7 +1236,7 @@ label[for="upload"] {
 		display: block;
 		font-size: 22px;
 		font-weight: 400;
-		padding: 15px 40px;
+		padding: 10px 40px;
 	}
 	.social-responsibility .swiper-wrapper {
 		margin: 40px 0;
@@ -1304,6 +1318,9 @@ label[for="upload"] {
 	.brands-card {
 		width: 100%;
 	}
+	.accordion-text p {
+		font-size: 16px;
+	}
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
 	footer {
@@ -1339,5 +1356,25 @@ label[for="upload"] {
 	label[for="upload"] , .submit-area input{
 		height: 60px;
 	    width: 140px;
+	}
+	.image {
+		position: relative;
+		overflow: hidden;
+		height: 400px;
+	}
+	.image1 {
+		position: relative;
+		overflow: hidden;
+		height: 350px;
+	}
+	.image2 {
+		position: relative;
+		overflow: hidden;
+		height: 350px;
+	}
+	.image3 {
+		position: relative;
+		overflow: hidden;
+		height: auto;
 	}
 }
