@@ -27,6 +27,7 @@ header {
 	top: 0;
 	left: 0;
 	width: 100%;
+	-webkit-backdrop-filter: blur(10px);
 	backdrop-filter: blur(10px);
 	padding: 40px 0;
 	z-index: 2;
@@ -66,7 +67,7 @@ nav {
 	font-size: 24px;
 	text-decoration: none;
 	cursor: pointer;
-	padding: 5px 0;
+	padding: 8px 0;
 }
 .navbar a{
     color: #fff;
@@ -202,7 +203,7 @@ nav {
     width: 100%;
     height: 2px;
     background: #fff;
-    transition: all 0.3s;
+    transition: all 0.4s;
 }
 .menu-toggle .bar1 {
     top: 0;
@@ -451,8 +452,9 @@ nav {
 .image1 {
 	position: relative;
     overflow: hidden;
-	height: 600px;
+	height: 750px;
 }
+
 .image2 {
 	position: relative;
     overflow: hidden;
@@ -551,12 +553,12 @@ nav {
 
 .sections span {
 	color: #72BE44;
-	font-size: 150px;
+	font-size: 260px;
 	font-weight: 600;
 }
 
 .sections p {
-	font-size: 25px;
+	font-size: 40px;
 	font-weight: 500;
 	width: 150px;
 }
@@ -817,6 +819,7 @@ CONTRACT MANUFACTURING
 }
 .accordion-awards .accordion-text img {
 	align-self: center;
+	display: block;
 }
 .accordion-awards .accordion-title {
 	cursor: default;
@@ -1021,6 +1024,10 @@ label[for="upload"] {
 .submit-area input:focus {
 	border-radius: 100px;
 }
+.highlight {
+	background-color: rgba(255, 255, 0, 0.4);
+	color: #000 !important;
+}
 
 @media screen and (max-width: 767px) {
 	.contact-us {
@@ -1059,6 +1066,22 @@ label[for="upload"] {
 	label[for="upload"] , .submit-area input{
 		height: 45px;
 	    width: 100px;
+	}
+	.image {
+		height: 180px;
+	}
+	.image1 {
+		height: 370px;
+	}
+	.image1 img {
+		width: 350%;
+		left: -125%;
+	}
+	.image2 {
+		height: 170px;
+	}
+	.accordion-awards .accordion-text img {
+		width: 50%;
 	}
 }
 @media screen and (max-width: 991px){
@@ -1321,6 +1344,15 @@ label[for="upload"] {
 	.accordion-text p {
 		font-size: 16px;
 	}
+	.awards-and-acknowledgments .accordion-awards .accordion-text {
+		flex-wrap: wrap;
+	}
+	.accordion-awards .accordion-text .consumers {
+		width: 100%;
+	}
+	.accordion-text img {
+		display: none;
+	}
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
 	footer {
@@ -1363,9 +1395,11 @@ label[for="upload"] {
 		height: 400px;
 	}
 	.image1 {
-		position: relative;
-		overflow: hidden;
-		height: 350px;
+		height: 500px;
+	}
+	.image1 img {
+		width: 240%;
+		left: -75%;
 	}
 	.image2 {
 		position: relative;

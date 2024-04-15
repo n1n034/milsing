@@ -61,7 +61,7 @@
                 </div>
                 <div>
                     <div class="search-box">
-                        <input type="text" placeholder="Search...">    
+                        <input type="text" name="search-box" id="searchInput" placeholder="Search...">    
                         <div class="close">
                            <span class="front"></span>
                            <span class="back"></span>
@@ -302,7 +302,7 @@
                 $("header").removeClass("active");
             }
         } else {
-            if ($(window).scrollTop() > 1150) {
+            if ($(window).scrollTop() > 900) {
                 $("header").addClass("active");
             } else {
                 $("header").removeClass("active");
@@ -326,6 +326,7 @@
             }
         });
     });
+
     document.getElementById('upload').addEventListener('change', function() {
         var fileName = this.files[0].name; 
         this.nextElementSibling.nextElementSibling.textContent = fileName;
@@ -339,10 +340,78 @@
                 if (scrollPosition + windowHeight < offsetTop || scrollPosition > offsetTop + $(this).height()) {
                     $(this).css("transform", "translateY(0)");
                 } else {
-                    $(this).css("transform", "translateY(" + ((scrollPosition - offsetTop) / 20) + "px)");
+                    $(this).css("transform", "translateY(-" + ((scrollPosition - offsetTop) / 20) + "px)");
                 }
             });
         });
+    });
+
+    $(document).ready(function() {
+    document.getElementById('searchInput').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            highlightSearchResults(this.value);
+        }
+    });
+
+    function highlightSearchResults(keyword) {
+        const prevHighlights = document.querySelectorAll('.highlight');
+        prevHighlights.forEach(node => {
+            node.classList.remove('highlight');
+        });
+
+        if (!keyword.trim()) return; 
+
+        const regex = new RegExp(keyword, 'gi');
+        const elementsToSearch = ['p', 'a', 'span', 'div', 'li', 'h1', 'h2', 'h3', 'h4', 'h5'];
+
+        elementsToSearch.forEach(element => {
+            const elements = document.querySelectorAll(element);
+            elements.forEach(el => {
+                highlightTextInNode(el, regex);
+            });
+        });
+        const firstHighlight = document.querySelector('.highlight');
+        if (firstHighlight) {
+            firstHighlight.scrollIntoView();
+        }
+    }
+
+        function highlightTextInNode(node, regex) {
+            if (node.nodeType === Node.TEXT_NODE) {
+                const text = node.nodeValue;
+                let match;
+                let lastIndex = 0;
+                const fragments = [];
+
+                while ((match = regex.exec(text)) !== null) {
+                    const beforeMatch = text.substring(lastIndex, match.index);
+                    if (beforeMatch) {
+                        fragments.push(document.createTextNode(beforeMatch));
+                    }
+                    const highlightedMatch = document.createElement('span');
+                    highlightedMatch.classList.add('highlight');
+                    highlightedMatch.textContent = match[0];
+                    fragments.push(highlightedMatch);
+                    lastIndex = regex.lastIndex;
+                }
+
+                const remainingText = text.substring(lastIndex);
+                if (remainingText) {
+                    fragments.push(document.createTextNode(remainingText));
+                }
+
+                const fragmentContainer = document.createDocumentFragment();
+                fragments.forEach(fragment => {
+                    fragmentContainer.appendChild(fragment);
+                });
+
+                node.parentNode.replaceChild(fragmentContainer, node);
+            } else if (node.nodeType === Node.ELEMENT_NODE) {
+                node.childNodes.forEach(childNode => {
+                    highlightTextInNode(childNode, regex);
+                });
+            }
+        }
     });
 });
 </script>
