@@ -1171,11 +1171,18 @@ label[for="upload"] {
     }
     .paragraph {
         flex-direction: column;
+		align-items: center;
     }
     .paragraph p {
         width: 100%;
         font-size: 16px;
     }
+	.paragraph-image {
+		width: auto;
+	}
+	.paragraph-image img{
+		height: 300px;
+	}
     .accordion {
         margin: 40px auto;
     }
