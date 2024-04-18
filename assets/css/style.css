@@ -229,14 +229,6 @@ nav {
 .menu-active nav {
 	display: block;
 }
-.swiper {
-	height: 100%;
-}
-
-.swiper-wrapper {
-	width: 100vh;
-	height: 100vh;
-}
 
 .naslovna {
 	background: url('/misling/assets/images/naslovna.png');
@@ -245,22 +237,29 @@ nav {
 	background-size: cover;
 	height: 100vh;
 }
+.naslovna .swiper {
+	height: 100%;
+}
 
-.swiper-pagination {
+.naslovna .swiper-wrapper {
+	width: 100vh;
+	height: 100vh;
+}
+.naslovna .swiper-pagination {
 	margin-bottom: 45px;
 }
 
-.swiper-pagination span {
+.naslovna .swiper-pagination span {
 	height: 14px;
 	width: 14px;
 	margin: 0 20px !important;
 }
 
-.swiper-pagination-bullet-active {
+.naslovna .swiper-pagination-bullet-active {
 	background: #fff !important;
 }
 
-.swiper-pagination-bullet {
+.naslovna .swiper-pagination-bullet {
 	border: 2px white solid;
 	background-color: transparent;
 	opacity: 1;
@@ -374,6 +373,7 @@ nav {
 .headline-container .paragraph p {
 	color: #000;
 	width: 100%;
+	text-align: center;
 }
 .uredski-sastanak {
 	width: 100%;
@@ -505,53 +505,84 @@ nav {
     transition: transform 0.8s ease;
 }
 
-
 .animacija {
 	margin: 80px 0;
-	filter: grayscale(100%);
+	overflow: hidden;
 }
-
-.animacija:hover {
+.animacija1 {
+	display: flex;
+	align-items: center;
+	animation: left-to-right 15s linear infinite;
+	white-space: nowrap;
+}
+.animacija1 a img {
+	margin: 0 20px;
+	filter: grayscale(100%);
+	flex-shrink: 0;
+}
+.animacija1 a img:hover {
 	filter: grayscale(0%);
 }
 
-.animacija1 {
-	background: url("/misling/assets/images/sponsor.png");
-	background-repeat: repeat-x;
-	background-size: cover;
-	height: 200px;
-	width: 100%;
-	animation: left-to-right 100s linear infinite;
-}
-
 .animacija2 {
-	background: url("/misling/assets/images/sponsor.png");
-	background-repeat: repeat-x;
-	background-size: cover;
-	height: 200px;
-	width: 100%;
-	animation: right-to-left 100s linear infinite;
+	display: flex;
+	align-items: center;
+	animation: right-to-left 15s linear infinite;
+	white-space: nowrap;
+}
+.animacija2 a img {
+	margin: 0 20px;
+	filter: grayscale(100%);
+}
+.animacija2 a img:hover {
+	filter: grayscale(0%);
 }
 
 @keyframes left-to-right {
-	from {
-		background-position: 0 center
+	from { 
+		transform: translateX(0); 
 	}
-
-	to {
-		background-position: 10000px center
+    to { 
+		transform: translateX(100%); 
 	}
 }
 
 @keyframes right-to-left {
-	from {
-		background-position: 0 center
+	from { 
+		transform: translateX(0); 
 	}
-
-	to {
-		background-position: -10000px center
+    to { 
+		transform: translateX(-100%); 
 	}
 }
+
+
+.swiper-container .swiper-slide {
+	width: 300px !important;
+	height: auto;
+	display: flex;
+	align-items: center !important;
+	justify-content: center !important;
+	cursor: pointer;
+}
+.swiper-container .swiper-slide img{
+	display: block;
+	margin: 0 auto;
+	filter: grayscale(100%);
+	max-height: 70px;
+	width: auto;
+}
+.swiper-container .swiper-slide img:hover{
+	filter: grayscale(0%);
+}
+.swiper-container .swiper-wrapper {
+	-webkit-transition-timing-function:linear!important; 
+	-o-transition-timing-function:linear!important;
+	transition-timing-function:linear!important; 
+}
+
+
+
 
 .podatci {
 	padding: 120px 0;
@@ -1104,6 +1135,9 @@ label[for="upload"] {
 	.accordion-awards .accordion-text img {
 		width: 50%;
 	}
+	.swiper-container .swiper-slide img {
+		max-height: 40px;
+	}
 }
 @media screen and (max-width: 991px){
 	html {
@@ -1440,5 +1474,8 @@ label[for="upload"] {
 		position: relative;
 		overflow: hidden;
 		height: auto;
+	}
+	.swiper-container .swiper-slide img {
+		max-height: 50px;
 	}
 }
