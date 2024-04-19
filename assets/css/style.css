@@ -505,84 +505,49 @@ nav {
     transition: transform 0.8s ease;
 }
 
-.animacija {
+
+.animation1 {
 	margin: 80px 0;
 	overflow: hidden;
+    white-space: nowrap;
 }
-.animacija1 {
-	display: flex;
-	align-items: center;
-	animation: left-to-right 15s linear infinite;
-	white-space: nowrap;
+
+.animation2 {
+	margin: 80px 0;
+	overflow: hidden;
+    white-space: nowrap;
 }
-.animacija1 a img {
+
+.animacija a {
+    text-decoration: none;
+}
+.animacija a img {
 	margin: 0 20px;
 	filter: grayscale(100%);
-	flex-shrink: 0;
+    max-height: 60px;
 }
-.animacija1 a img:hover {
+.animacija a img:hover {
 	filter: grayscale(0%);
 }
 
-.animacija2 {
-	display: flex;
+.animacija {
+	display: inline-flex;
 	align-items: center;
-	animation: right-to-left 15s linear infinite;
-	white-space: nowrap;
-}
-.animacija2 a img {
-	margin: 0 20px;
-	filter: grayscale(100%);
-}
-.animacija2 a img:hover {
-	filter: grayscale(0%);
+	animation: right-to-left 20s linear infinite;
 }
 
-@keyframes left-to-right {
-	from { 
-		transform: translateX(0); 
-	}
-    to { 
-		transform: translateX(100%); 
-	}
+.animation2 .animacija {
+	animation-direction: reverse;
 }
 
 @keyframes right-to-left {
 	from { 
-		transform: translateX(0); 
+		transform: translateX(0%); 
 	}
     to { 
 		transform: translateX(-100%); 
 	}
 }
-
-
-.swiper-container .swiper-slide {
-	width: 300px !important;
-	height: auto;
-	display: flex;
-	align-items: center !important;
-	justify-content: center !important;
-	cursor: pointer;
-}
-.swiper-container .swiper-slide img{
-	display: block;
-	margin: 0 auto;
-	filter: grayscale(100%);
-	max-height: 70px;
-	width: auto;
-}
-.swiper-container .swiper-slide img:hover{
-	filter: grayscale(0%);
-}
-.swiper-container .swiper-wrapper {
-	-webkit-transition-timing-function:linear!important; 
-	-o-transition-timing-function:linear!important;
-	transition-timing-function:linear!important; 
-}
-
-
-
 
 .podatci {
 	padding: 120px 0;
@@ -1236,15 +1201,6 @@ label[for="upload"] {
 	.accordion-text li {
 		font-size: 18px;
 	}
-	.animacija {
-		margin: 40px 0;
-	}
-    .animacija1 {
-        height: 80px;
-    }
-    .animacija2 {
-        height: 80px;
-    }
 	.podatci {
 		padding: 50px 0;
 	}
@@ -1417,6 +1373,18 @@ label[for="upload"] {
 	}
 	.accordion-text img {
 		display: none;
+	}
+	.animacija {
+		animation-duration: 30s;
+	}
+	.animacija a img {
+		max-height: 40px;
+	}
+	.animation1 {
+		margin: 40px 0;
+	}
+	.animation2 {
+		margin: 40px 0;
 	}
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
