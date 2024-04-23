@@ -37,7 +37,7 @@ header {
 }
 
 .expanded {
-	height: 265px;
+	height: 280px;
 }
 
 .active .logo {
@@ -110,6 +110,31 @@ nav {
 	flex-direction: column;
 	position: absolute;
 	opacity: 1;
+}
+
+.options a {
+    font-family: "Poppins";
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 100px;
+    border: 2px solid #fff;
+    padding: 15px 35px;
+    margin-bottom: 15px;
+	display: block;
+    width: max-content;
+}
+.options a:hover{
+	background-color: #fff;
+	color: #000;
+}
+.options {
+	display: none;
+}
+.drop-down .options{
+	margin-top: 20px;
+	display: flex;
+	flex-direction: column;
 }
 
 .search-box {
@@ -388,7 +413,13 @@ nav {
 	width: 50%;
 	padding: 15px;
 }
-
+.paragraph b {
+	color: #919191;
+	font-family: Poppins;
+	font-size: 20px;
+	width: 50%;
+	padding: 15px;
+}
 .paragraph {
 	display: flex;
 }
@@ -701,55 +732,53 @@ BRANDS
 .brands {
 	margin-top: 100px;
 }
-
-.brands-flex {
-	display: flex;
-}
-
-.brands-image {
-	width: 50%;
-}
-
-.brands-image img {
-	width: 100%;
-	display: block;
-}
-
 .brands-card {
-	width: 50%;
-	padding: 40px;
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	text-align: center;
-	align-items: center;
+	height: 700px;
+	overflow: hidden;
+	position: relative;
 }
-
-.brands-card img {
-	padding: 0 70px;
-	max-height: 150px;
-	width: auto;
-	margin-bottom: 30px;
+.brands-bc{
+	width: 55%;
 }
-
-.brands-card p {
-	color: #797979;
+.brands-bc:nth-child(even) {
+	position: absolute;
+	height: 100%;
+	right: 0;
+	z-index: -1;
+}
+.brands-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 55%;
+    height: 100%;
+    background: #fff;
+    position: absolute;
+}
+.brands-info img {
+	width: 30%;
+}
+.brands-info p {
 	font-family: Poppins;
-	font-size: 26px;
-	max-width: 600px;
+	padding: 40px 0;
+	font-size: 20px;
+	text-align: center;
 }
-
-.brands-card a {
-	display: block;
-	font-family: "Poppins";
+.brands-info a {
 	text-decoration: none;
 	color: #000;
-	font-size: 26px;
+	font-size: 24px;
+	font-family: Poppins;
 	border-radius: 100px;
 	border: 2px solid #000;
-	padding: 20px 50px;
-	margin-top: 30px;
+	padding: 15px 40px;
 }
+
+
+
+
 
 
 /* 
@@ -1103,6 +1132,17 @@ label[for="upload"] {
 	.swiper-container .swiper-slide img {
 		max-height: 40px;
 	}
+	.brands-card {
+		height: 300px;
+	}
+	.brands-info p {
+		padding: 15px 0;
+		font-size: 16px;
+	}
+	.brands-info a {
+		font-size: 16px;
+		padding: 10px 20px;
+	}
 }
 @media screen and (max-width: 991px){
 	html {
@@ -1173,6 +1213,10 @@ label[for="upload"] {
 		align-items: center;
     }
     .paragraph p {
+        width: 100%;
+        font-size: 16px;
+    }
+	.paragraph b {
         width: 100%;
         font-size: 16px;
     }
@@ -1352,15 +1396,6 @@ label[for="upload"] {
 	}
 	.submit h5 {
 		font-size: 22px;
-	}
-	.brands-flex {
-		display: block;
-	}
-	.brands-image {
-		width: 100%;
-	}
-	.brands-card {
-		width: 100%;
 	}
 	.accordion-text p {
 		font-size: 16px;
