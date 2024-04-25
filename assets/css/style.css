@@ -706,21 +706,20 @@ BRANDS
 .brands-bc{
 	width: 55%;
 }
+.brands-bc:nth-child(odd) {
+    clip-path: polygon(0% 100%, 100% 100%, 91% 0, 0 0);
+}
 .brands-bc:nth-child(even) {
-	position: absolute;
-	height: 100%;
-	right: 0;
-	z-index: -1;
+	clip-path: polygon(0% 100%, 100% 100%, 100% 0, 9% 0)
 }
 .brands-info {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 55%;
+    width: 50%;
     height: 100%;
     background: #fff;
-    position: absolute;
 }
 .brands-info img {
 	width: 30%;
