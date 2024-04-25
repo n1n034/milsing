@@ -72,11 +72,8 @@
             </div>
         </div>
     </header>
-    <section class="image2">
-        <h1></h1>
-        <div class="parallax-wrapper">
-            <img src="/misling/assets/images/ured.png" alt="ured" class="parallax">
-        </div>
+    <section class="image">
+        <img src="/misling/assets/images/ured.png" alt="ured" class="parallax">
     </section>
     <section id="contact-us">
         <div class="container">
@@ -220,12 +217,9 @@
             </form>
         </div>
     </section>
-    <section class="image3" >
-        <div class="container">
-            <h1></h1>
-            <div class="headline-text">
-                <img src="/misling/assets/images/uredski-sastanak.png" alt="uredski-sastanak" class="uredski-sastanak">
-            </div>
+    <section class="image" >
+        <div class="headline-text">
+            <img src="/misling/assets/images/uredski-sastanak.png" alt="uredski-sastanak" class="uredski-sastanak">
         </div>
     </section>    
     <footer>
@@ -279,6 +273,14 @@
             </div>
         </div>
     </footer>
+<script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
+<script>
+    var image = document.getElementsByClassName('parallax');
+    new simpleParallax(image, {
+        delay: .6,
+        transition: 'cubic-bezier(0,0,0,1)'
+    });
+</script>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> 
 <script>
     $( document ).ready(function() {
@@ -326,20 +328,6 @@
     document.getElementById('upload').addEventListener('change', function() {
         var fileName = this.files[0].name; 
         this.nextElementSibling.nextElementSibling.textContent = fileName;
-    });
-    $(document).ready(function() {
-        $(window).on("scroll", function() {
-            var scrollPosition = $(this).scrollTop();
-            $(".parallax").each(function() {
-                var offsetTop = $(this).offset().top;
-                var windowHeight = $(window).height();
-                if (scrollPosition + windowHeight < offsetTop || scrollPosition > offsetTop + $(this).height()) {
-                    $(this).css("transform", "translateY(0)");
-                } else {
-                    $(this).css("transform", "translateY(-" + ((scrollPosition - offsetTop) / 20) + "px)");
-                }
-            });
-        });
     });
 
     $(document).ready(function() {

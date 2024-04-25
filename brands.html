@@ -79,10 +79,7 @@
         </div>
     </header>
     <section class="image">
-        <h1></h1>
-        <div class="parallax-wrapper">
-            <img src="/misling/assets/images/milsing.png" alt="milsing" class="parallax">
-        </div>
+        <img src="/misling/assets/images/milsing.png" alt="milsing" class="parallax">
     </section>
     <section id="brands">
         <div class="container">
@@ -157,7 +154,7 @@
         <div class="brands-card" id="lectranal">
             <div class="brands-bc" style="background:url(/misling/assets/images/lectranal-image.png) left no-repeat; background-size: contain; background-attachment: fixed"></div>
             <div class="brands-info" style=" top: 0; right: 0; clip-path: polygon(18% 100%, 100% 100%, 100% 0, 0 0);">
-                <img src="/misling/assets/images/lectranal-logo.svg" alt="lectranal-logo">
+                <img src="/misling/assets/images/lectranal-logo.png" alt="lectranal-logo">
                 <p>
                     Natural allergy relief
                 </p>
@@ -250,7 +247,7 @@
         </div>
         <div class="brands-card" id="turbolax">
             <div class="brands-info" style=" top: 0; left: 0; clip-path: polygon(0% 100%, 82% 100%, 100% 0, 0 0);">
-                <img src="/misling/assets/images/turbolax-logo.svg" alt="turbolax-logo">
+                <img src="/misling/assets/images/turbolax-logo.png" alt="turbolax-logo">
                 <p>
                     Innovative laxative food 
                     <br>
@@ -328,6 +325,14 @@
             </div>
         </div>
     </footer>
+<script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
+<script>
+    var image = document.getElementsByClassName('parallax');
+    new simpleParallax(image, {
+        delay: .6,
+        transition: 'cubic-bezier(0,0,0,1)'
+    });
+</script>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> 
 <script>
     $( document ).ready(function() {
@@ -368,20 +373,6 @@
             if ($(window).width() <= 991) {
                 $('header').toggleClass('expanded', $(this).hasClass('drop-down'));
             }
-        });
-    });
-    $(document).ready(function() {
-        $(window).on("scroll", function() {
-            var scrollPosition = $(this).scrollTop();
-            $(".parallax").each(function() {
-                var offsetTop = $(this).offset().top;
-                var windowHeight = $(window).height();
-                if (scrollPosition + windowHeight < offsetTop || scrollPosition > offsetTop + $(this).height()) {
-                    $(this).css("transform", "translateY(0)");
-                } else {
-                    $(this).css("transform", "translateY(-" + ((scrollPosition - offsetTop) / 20) + "px)");
-                }
-            });
         });
     });
 

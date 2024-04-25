@@ -79,10 +79,7 @@
         </div>
     </header>
     <section class="image">
-        <h1></h1>
-        <div class="parallax-wrapper">
-            <img src="/misling/assets/images/proizvodnja.png" alt="proizvodnja" class="parallax">
-        </div>
+        <img src="/misling/assets/images/proizvodnja.png" alt="proizvodnja" class="parallax">
     </section>
     <section class="why-us" id="why-us">
         <div class="container">
@@ -346,10 +343,7 @@
         </div>
     </section>
     <section class="image">
-        <h1></h1>
-        <div class="parallax-wrapper">
-            <img src="/misling/assets/images/kemicar.png" alt="kemicar" class="parallax">
-        </div>
+        <img src="/misling/assets/images/kemicar.png" alt="kemicar" class="parallax">
     </section>
     <section class="manufacturing-capabilities" id="manufacturing-capabilities">
         <div class="container">
@@ -500,10 +494,7 @@
         </div>
     </section>
     <section class="image">
-        <h1></h1>
-        <div class="parallax-wrapper">
-            <img src="/misling/assets/images/automatizacija.png" alt="automatizacija" class="parallax">
-        </div>
+        <img src="/misling/assets/images/automatizacija.png" alt="automatizacija" class="parallax">
     </section>
     <footer>
         <div class="container">
@@ -556,6 +547,14 @@
             </div>
         </div>
     </footer>
+<script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
+<script>
+    var image = document.getElementsByClassName('parallax');
+    new simpleParallax(image, {
+        delay: .6,
+        transition: 'cubic-bezier(0,0,0,1)'
+    });
+</script>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> 
 <script>
     $( document ).ready(function() {
@@ -602,21 +601,6 @@
         });
         $('header nav a').on('click', function() {
             $('body').removeClass('menu-active');
-        });
-    });
-
-    $(document).ready(function() {
-        $(window).on("scroll", function() {
-            var scrollPosition = $(this).scrollTop();
-            $(".parallax").each(function() {
-                var offsetTop = $(this).offset().top;
-                var windowHeight = $(window).height();
-                if (scrollPosition + windowHeight < offsetTop || scrollPosition > offsetTop + $(this).height()) {
-                    $(this).css("transform", "translateY(0)");
-                } else {
-                    $(this).css("transform", "translateY(-" + ((scrollPosition - offsetTop) / 20) + "px)");
-                }
-            });
         });
     });
 

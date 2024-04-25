@@ -196,10 +196,7 @@
         </div>
     </section>
     <section class="image">
-        <h1></h1>
-        <div class="parallax-wrapper">
-            <img src="/misling/assets/images/milsing.png" alt="milsing" class="parallax">
-        </div>
+        <img src="/misling/assets/images/milsing.png" alt="milsing" class="parallax">
     </section>
     <section class="our-values">
         <div class="container">
@@ -401,10 +398,10 @@
                     <img src="/misling/assets/images/mikeda-logo.svg" alt="mikeda-logo">
                 </a>
                 <a href="/misling/brands.html#lectranal">
-                    <img src="/misling/assets/images/lectranal-logo.svg" alt="lectranal-logo">
+                    <img src="/misling/assets/images/lectranal-logo.png" alt="lectranal-logo">
                 </a>
                 <a href="/misling/brands.html#turbolax">
-                    <img src="/misling/assets/images/turbolax-logo.svg" alt="turbolax-logo">
+                    <img src="/misling/assets/images/turbolax-logo.png" alt="turbolax-logo">
                 </a>
                 <a href="/misling/brands.html#naturesboutny">
                     <img src="/misling/assets/images/natures-boutny-logo.svg" alt="natures-boutny-logo">
@@ -413,48 +410,45 @@
         </div>
         <div class="animation2">
             <div class="animacija">
-                <a href="https://www.biorela.hr">
+                <a href="/misling/brands.html#biorela">
                     <img src="/misling/assets/images/biorela-logo.svg" alt="biorela-logo">
                 </a>
-                <a href="https://www.osteobiflex.com.hr">
+                <a href="/misling/brands.html#osteobiflex">
                     <img src="/misling/assets/images/osteo-bi-flex-logo.svg" alt="osteo-bi-flex-logo">
                 </a>
-                <a href="https://www.chocowise.com/">
+                <a href="/misling/brands.html#chocowise">
                     <img src="/misling/assets/images/chocowise-logo.svg" alt="chocowise-logo">
                 </a>
-                <a href="https://www.juicyslim.hr/">
+                <a href="/misling/brands.html#juicislim">
                     <img src="/misling/assets/images/juicyslim-logo.svg" alt="juicyslim-logo">
                 </a>
-                <a href="https://ldirect.hr/">
+                <a href="/misling/brands.html#ldirect">
                     <img src="/misling/assets/images/Ldrirect-logo.svg" alt="Ldrirect-logo">
                 </a>
-                <a href="https://naturalwealth.com.hr/">
+                <a href="/misling/brands.html#naturalwealth">
                     <img src="/misling/assets/images/naturalwealth-logo.svg" alt="naturalwealth-logo">
                 </a>
-                <a href="https://www.nutripharm.hr/">
+                <a href="/misling/brands.html#nutripharm">
                     <img src="/misling/assets/images/nutripharm-logo.svg" alt="nutripharm-logo">
                 </a>
-                <a href="https://www.mikeda.hr/">
+                <a href="/misling/brands.html#mikeda">
                     <img src="/misling/assets/images/mikeda-logo.svg" alt="mikeda-logo">
                 </a>
-                <a href="https://www.lectranal.hr/">
-                    <img src="/misling/assets/images/lectranal-logo.svg" alt="lectranal-logo">
+                <a href="/misling/brands.html#lectranal">
+                    <img src="/misling/assets/images/lectranal-logo.png" alt="lectranal-logo">
                 </a>
-                <a href="https://www.turbolax.hr/">
-                    <img src="/misling/assets/images/turbolax-logo.svg" alt="turbolax-logo">
+                <a href="/misling/brands.html#turbolax">
+                    <img src="/misling/assets/images/turbolax-logo.png" alt="turbolax-logo">
                 </a>
-                <a href="https://www.naturesbounty.hr/">
+                <a href="/misling/brands.html#naturesboutny">
                     <img src="/misling/assets/images/natures-boutny-logo.svg" alt="natures-boutny-logo">
                 </a>
             </div>
         </div>
         </div>
     </section>
-    <section class="image1">
-        <h1></h1>
-        <div class="parallax-wrapper">
-            <img src="/misling/assets/images/location.png" alt="location" class="parallax">
-        </div>
+    <section class="image">
+        <img src="/misling/assets/images/location.png" alt="location" class="parallax">
     </section>
     <section class="podatci">
         <div class="container">
@@ -511,10 +505,7 @@
         </div>
     </section>
     <section class="image">
-        <h1></h1>
-        <div class="parallax-wrapper">
-            <img src="/misling/assets/images/izgled-firme.jpg" alt="izgled-firme" class="parallax">
-        </div>
+        <img src="/misling/assets/images/izgled-firme.jpg" alt="izgled-firme" class="parallax">
     </section>
     <section class="products">
         <div class="container">
@@ -658,6 +649,14 @@
     document.querySelector(".animation2").appendChild(copy);
    
 </script>
+<script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
+<script>
+    var image = document.getElementsByClassName('parallax');
+    new simpleParallax(image, {
+        delay: .6,
+        transition: 'cubic-bezier(0,0,0,1)'
+    });
+</script>
 <script>
     $( document ).ready(function() {
         $('.menu-toggle').on('click',function() {
@@ -707,21 +706,7 @@
         });
     });
 
-    $(document).ready(function() {
-        $(window).on("scroll", function() {
-            var scrollPosition = $(this).scrollTop();
-            $(".parallax").each(function() {
-                var offsetTop = $(this).offset().top;
-                var windowHeight = $(window).height();
-                if (scrollPosition + windowHeight > offsetTop && scrollPosition < offsetTop + $(this).height()) {
-                    var distance = (scrollPosition - offsetTop + windowHeight) / 20; // Preračunajte razliku
-                    $(this).css("transform", "translateY(-" + distance + "px)"); // Dodajte minus da obrnete smjer
-                } else {
-                    $(this).css("transform", "translateY(0)");
-                }
-            });
-        });
-    });
+   
 
     $(document).ready(function() {
     document.getElementById('searchInput').addEventListener('keypress', function(e) {
